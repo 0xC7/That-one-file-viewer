@@ -72,5 +72,5 @@ get "/swf/:flash.swf" do
 end
 
 not_found do
-	haml_error(404, "The requested page could not be found.")
+  haml_error(404, "The requested page could not be found.")
 end
