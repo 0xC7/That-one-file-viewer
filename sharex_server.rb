@@ -70,3 +70,7 @@ end
 get "/swf/:flash.swf" do
   send_file "views/assets/swf/#{params[:flash]}.swf"
 end
+
+not_found do
+	haml_error(404, "The requested page could not be found.")
+end
