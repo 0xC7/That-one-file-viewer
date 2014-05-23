@@ -1,0 +1,22 @@
+- assets("flashblock.css", "360player.css", "360player-visualization.css", "berniecode-animator.js", "soundmanager2.js", "360player.js")
+#sm2-container
+.ui360.ui360-vis
+	%a(href="#{File.basename(@data[:file])}")
+%script(type="text/javascript")
+	soundManager.setup({
+	url: '/swf/',
+	flashVersion: 9,
+	useFlashBlock: true,
+	debugMode: false
+	});
+
+	threeSixtyPlayer.config.scaleFont = (navigator.userAgent.match(/msie/i)?false:true);
+	threeSixtyPlayer.config.showHMSTime = true;
+	threeSixtyPlayer.config.useWaveformData = true;
+	threeSixtyPlayer.config.useEQData = true;
+
+	if (threeSixtyPlayer.config.useWaveformData) { soundManager.flash9Options.useWaveformData = true; }
+	if (threeSixtyPlayer.config.useEQData) { soundManager.flash9Options.useEQData = true; }
+	if (threeSixtyPlayer.config.usePeakData) { soundManager.flash9Options.usePeakData = true; }
+
+	if (threeSixtyPlayer.config.useWaveformData || threeSixtyPlayer.flash9Options.useEQData || threeSixtyPlayer.flash9Options.usePeakData) { soundManager.preferFlash = true; }

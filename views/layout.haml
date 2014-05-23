@@ -1,0 +1,24 @@
+!!! 5
+%html(lang="en")
+	%head
+		%title= yield_content :title
+		%meta(charset="UTF-8")/
+		%link(rel="stylesheet" type="text/css" href="/scss/#{settings.theme}.scss")/
+		= yield_content :assets
+	%body
+		#wrapper
+			%header
+				%ul
+					%li#brand= yield_content :title
+					- if type == :show
+						%li#extension /#{@data[:id]} (#{file_ext(@data[:file]).upcase} - #{File.size(@data[:file]).to_s(:human_size)})
+						%li.pull_right
+							%a.button(href="#{@data[:id]}/download") Download
+			#content
+				.padding
+					= yield
+				#push
+		%footer
+			%p
+				%span.copy &copy;&nbsp;
+				= settings.copyright

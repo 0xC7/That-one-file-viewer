@@ -1,0 +1,66 @@
+image:
+  - gif
+  - jpeg
+  - jpg
+  - png
+  - svg
+video:
+  - mp4
+  - ogv
+  - webm
+audio:
+  - m4a
+  - mp3
+  - ogg
+  - wav
+archive:
+  - 7z
+  - arj
+  - bz2
+  - bzip2
+  - cab
+  - cpio
+  - deb
+  - dmg
+  - exe
+  - fat
+  - gz
+  - gzip
+  - hfs
+  - iso
+  - lha
+  - lzh
+  - lzma
+  - ntfs
+  - rar
+  - rpm
+  - squashfs
+  - swm
+  - tar
+  - taz
+  - tbz2
+  - tbz
+  - tgz
+  - tpz
+  - txz
+  - vhd
+  - wim
+  - xar
+  - xz
+  - z
+  - zip
+paste:
+  - c
+  - cpp
+  - css
+  - htm
+  - html
+  - java
+  - js
+  - php
+  - pl
+  - py
+  - rb
+  - sh
+  - txt
+  - xml

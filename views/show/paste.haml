@@ -1,0 +1,4 @@
+- assets("highlight.pack.js")
+%pre
+	%code= html_safe File.read(@data[:file])
+%script(type="text/javascript") hljs.initHighlightingOnLoad()

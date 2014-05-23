@@ -1,0 +1,4 @@
+.sass-cache
+Gemfile.lock
+public/*
+config/basic_cfg.yml
