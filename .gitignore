@@ -1,4 +1,5 @@
 .sass-cache
 Gemfile.lock
 public/*
+!public/test.txt
 config/basic_cfg.yml
