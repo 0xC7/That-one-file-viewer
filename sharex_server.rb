@@ -13,6 +13,7 @@ require_relative "helpers/haml_helper"
 helpers FileHelper, HamlHelper
 
 set :server, %w[puma webrick]
+set :environment, :production
 
 # Set Default Config
 set :brand,     "0xC7"
@@ -31,6 +32,8 @@ config_file "config/basic_cfg.yml"
 
 Haml::Options.defaults[:ugly] = true
 Haml::Options.defaults[:remove_whitespace] = true
+
+puts "Starting up in #{settings.environment}"
 
 get "/favicon.ico" do;end # Ignore this for the next route
 

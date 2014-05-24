@@ -6,4 +6,9 @@ page_titles:
   audio: Audio Player
   archive: File Sharer
   paste: Pastebin
-theme: light
+theme: light            # Light by default
+
+# Sinatra Settings (None of these need to be here unless you want to change the default)
+environment: production # Change this to developement if you're testing (production by default)
+bind: 127.0.0.1         # The IP you want the application to listen on (Defaults to localhost)
+port: 4567              # The port you want the application to listen on (Defaults to 4567)
