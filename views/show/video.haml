@@ -1,5 +1,5 @@
-%video
-	- case file_ext @file
+%video(controls)
+	- case file_ext @data[:file]
 		- when "mp4"
 			%source(src="#{File.basename(@data[:file])}" type="video/mp4")/
 		- when "webm"
