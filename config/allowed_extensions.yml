@@ -4,10 +4,13 @@ image:
   - jpg
   - png
   - svg
+  - bmp
+  - tga
 video:
   - mp4
   - ogv
   - webm
+  - flv
 audio:
   - m4a
   - mp3
@@ -49,10 +52,16 @@ archive:
   - xz
   - z
   - zip
+  - flac
+  # Flac isn't an archive, but most browsers don't support flac.
 paste:
   - c
   - cpp
   - css
+  - batch
+  - bat
+  - cmd
+  - hpp
   - htm
   - html
   - java
@@ -64,3 +73,4 @@ paste:
   - sh
   - txt
   - xml
+  - yml
