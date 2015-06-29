@@ -23,6 +23,7 @@ archive:
   - bzip2
   - cab
   - cpio
+  - dds # Treat as binary to allow downloading
   - deb
   - dmg
   - exe
@@ -38,6 +39,7 @@ archive:
   - ntfs
   - pdf
   - rar
+  - raw # Treat as binary to allow downloading
   - rpm
   - squashfs
   - swm
@@ -56,22 +58,33 @@ archive:
   - z
   - zip
 paste:
+  - bash
+  - bashrc
   - bat
   - batch
   - c
   - cmd
+  - conf
   - cpp
   - css
+  - h
   - hpp
+  - htaccess
   - htm
   - html
+  - in
   - java
   - js
+  - md5 # hash dump
   - php
   - pl
   - py
   - rb
+  - rc
   - sh
   - txt
   - xml
+  - yaml
   - yml
+  - zsh
+  - zshrc
