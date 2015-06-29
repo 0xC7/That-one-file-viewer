@@ -17,7 +17,6 @@ audio:
   - ogg
   - wav
 archive:
-  # Flac isn't an archive, but most browsers don't support flac.
   - 7z
   - arj
   - bz2
@@ -28,7 +27,7 @@ archive:
   - dmg
   - exe
   - fat
-  - flac
+  - flac # Treat as binary to allow downloading
   - gz
   - gzip
   - hfs
@@ -47,7 +46,7 @@ archive:
   - tbz
   - tbz2
   - tgz
-  - torrent #same
+  - torrent # Treat as binary to allow downloading
   - tpz
   - txz
   - vhd
