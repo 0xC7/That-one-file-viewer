@@ -1,22 +1,23 @@
 image:
+  - bmp
   - gif
   - jpeg
   - jpg
   - png
   - svg
-  - bmp
   - tga
 video:
+  - flv
   - mp4
   - ogv
   - webm
-  - flv
 audio:
   - m4a
   - mp3
   - ogg
   - wav
 archive:
+  # Flac isn't an archive, but most browsers don't support flac.
   - 7z
   - arj
   - bz2
@@ -27,6 +28,7 @@ archive:
   - dmg
   - exe
   - fat
+  - flac
   - gz
   - gzip
   - hfs
@@ -35,15 +37,17 @@ archive:
   - lzh
   - lzma
   - ntfs
+  - pdf
   - rar
   - rpm
   - squashfs
   - swm
   - tar
   - taz
-  - tbz2
   - tbz
+  - tbz2
   - tgz
+  - torrent #same
   - tpz
   - txz
   - vhd
@@ -52,15 +56,13 @@ archive:
   - xz
   - z
   - zip
-  - flac
-  # Flac isn't an archive, but most browsers don't support flac.
 paste:
+  - bat
+  - batch
   - c
+  - cmd
   - cpp
   - css
-  - batch
-  - bat
-  - cmd
   - hpp
   - htm
   - html
