@@ -1,16 +1,16 @@
 image:
+  - bmp
   - gif
   - jpeg
   - jpg
   - png
   - svg
-  - bmp
   - tga
 video:
+  - flv
   - mp4
   - ogv
   - webm
-  - flv
 audio:
   - m4a
   - mp3
@@ -23,10 +23,12 @@ archive:
   - bzip2
   - cab
   - cpio
+  - dds # Treat as binary to allow downloading
   - deb
   - dmg
   - exe
   - fat
+  - flac # Treat as binary to allow downloading
   - gz
   - gzip
   - hfs
@@ -35,15 +37,18 @@ archive:
   - lzh
   - lzma
   - ntfs
+  - pdf
   - rar
+  - raw # Treat as binary to allow downloading
   - rpm
   - squashfs
   - swm
   - tar
   - taz
-  - tbz2
   - tbz
+  - tbz2
   - tgz
+  - torrent # Treat as binary to allow downloading
   - tpz
   - txz
   - vhd
@@ -52,25 +57,34 @@ archive:
   - xz
   - z
   - zip
-  - flac
-  # Flac isn't an archive, but most browsers don't support flac.
 paste:
+  - bash
+  - bashrc
+  - bat
+  - batch
   - c
+  - cmd
+  - conf
   - cpp
   - css
-  - batch
-  - bat
-  - cmd
+  - h
   - hpp
+  - htaccess
   - htm
   - html
+  - in
   - java
   - js
+  - md5 # hash dump
   - php
   - pl
   - py
   - rb
+  - rc
   - sh
   - txt
   - xml
+  - yaml
   - yml
+  - zsh
+  - zshrc
