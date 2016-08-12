@@ -1,3 +1,4 @@
+%meta(property="og:description" content="#{@data[:id]}.#{@extension} - #{@humanrsize}")/
 - assets("highlight.pack.js")
 %pre
 	%code= html_safe File.read(@data[:file])

@@ -1,1 +1,3 @@
+%meta(property="og:description" content="#{@data[:id]}.#{@extension} - #{@humanrsize}<br>(#{@width} × #{@height}, #{@ratio})")/
+%meta(property="og:image" content="/#{@data[:id]}.#{@extension}")/
 %img(src="#{File.basename(@data[:file])}")/
