@@ -1,3 +1,5 @@
+%meta(property="og:description" content="#{@data[:id]}.#{@extension} - #{@humanrsize}")/
+%meta(property="og:video:url" content="/#{@data[:id]}.#{@extension}")/
 %video(controls)
 	- case file_ext @data[:file]
 		- when "mp4"

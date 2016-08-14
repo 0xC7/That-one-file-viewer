@@ -3,6 +3,8 @@
 	%head
 		%title= yield_content :title
 		%meta(charset="UTF-8")/
+		%meta(property="og:title" content="#{yield_content :title}")/
+		%meta(prperty="og:site_name" content="#{yield_content :title}")/
 		%link(rel="stylesheet" type="text/css" href="/scss/#{settings.theme}.scss")/
 		= yield_content :assets
 	%body
@@ -11,7 +13,11 @@
 				%ul
 					%li#brand= yield_content :title
 					- if type == :show
-						%li#extension /#{@data[:id]} (#{file_ext(@data[:file]).upcase} - #{File.size(@data[:file]).to_s(:human_size)})
+						- if @data[:type] == "image"
+							%li#extension /#{@data[:id]}.#{@extension} | #{@humanrsize} (#{@width} × #{@height}, #{@ratio})
+						- else
+							%li#extension /#{@data[:id]}.#{@extension} | #{@humanrsize}
+
 						%li.pull_right
 							%a.button(href="#{@data[:id]}/download") Download
 			#content

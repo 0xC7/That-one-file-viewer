@@ -63,6 +63,7 @@ paste:
   - bat
   - batch
   - c
+  - cs
   - cmd
   - conf
   - cpp
@@ -75,13 +76,16 @@ paste:
   - in
   - java
   - js
+  - lsl
   - md5 # hash dump
+  - ossl
   - php
   - pl
   - py
   - rb
   - rc
   - sh
+  - sha1
   - txt
   - xml
   - yaml
