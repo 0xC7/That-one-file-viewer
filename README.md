@@ -75,7 +75,7 @@ gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB8
 #Configure nginx
 `nano /etc/nginx/sites-available/sharex_server`
 
-Put this in:
+*If you modify nginx.conf directly, remember to remove the existing server block, or adapt your configuration for your environment*
 ````
 server {
         listen 80;
