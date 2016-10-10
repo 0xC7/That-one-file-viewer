@@ -4,8 +4,8 @@ require "sinatra/content_for"
 require "sinatra/config_file"
 require "active_support"
 require "active_support/core_ext/numeric/conversions"
-require "haml"
-require "sass"
+require "tilt/haml"
+require "tilt/sass"
 
 # Helpers
 require_relative "helpers/file_helper"
