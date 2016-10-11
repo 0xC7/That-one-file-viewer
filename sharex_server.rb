@@ -30,6 +30,9 @@ set :theme, "light"
 # Require User Config
 config_file "config/basic_cfg.yml"
 
+invalid_chars_list = "?<>',?[]}{=)(*&^%$#`~{}"
+invalid_chars = /[#{invalid_chars_list.gsub(/./){|char| "\\#{char}"}}]/
+
 Haml::Options.defaults[:ugly] = true
 Haml::Options.defaults[:remove_whitespace] = true
 
@@ -39,16 +42,24 @@ get "/favicon.ico" do;end # Ignore this for the next route
 
 get "/:id/?" do
   @data = validate_file params[:id]
+  if @data[:id] =~ invalid_chars
+    status 404
+  else
   return @data unless @data.is_a?(Hash)
   status 200
   haml :show, locals: {type: :show, object: @data[:type]}
 end
+end
 
 get "/:id/download/?" do
   data = validate_file params[:id]
+  if data[:id] =~ invalid_chars
+    status 404
+  else
   return data unless data.is_a?(Hash)
   status 200
   send_file data[:file], disposition: :attachment, type: "application/octet-stream"
+end
 end
 
 get "/scss/:style.scss" do
