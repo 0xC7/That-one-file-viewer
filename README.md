@@ -3,8 +3,8 @@ That-one-file-viewer
 
 A file viewer, written in Ruby using Sinatra, by that guy. It's intended for use with **[ShareX](http://getsharex.com/)** by [those guys](https://github.com/ShareX).
 
-#Installing That One File Viewer
-#Table of Contents
+##Installing That One File Viewer
+##Table of Contents
 1. [Set aliases](#set-aliases)
 2. [Download the required tools](#download-the-required-tools)
 	1. [Windows](#windows)
@@ -19,17 +19,18 @@ A file viewer, written in Ruby using Sinatra, by that guy. It's intended for use
 10. [Autorun](#autorun)
 
 
-#Set aliases
-````
+##Set aliases
+
+```
 #Use 'apt-get' for ubuntu.
 alias aptcmd='aptitude'
 #replace with your own username
 tuser=$USER
 programs="nano sudo nginx dos2unix ruby-devel build-essential libiconv-devel libxml2-devel tmux curl git make"
-````
+```
 
-#Download the required tools
-##Windows
+##Download the required tools
+###Windows
 Install Cygwin and the following packages:
 
 * Devel/git (Unless you have another git binary installed)
@@ -41,7 +42,7 @@ Install Cygwin and the following packages:
 * Web/nginx
 * Util/dos2unix
 
-###Nokogiri Gem
+####Nokogiri Gem
 
 The nokogiri requires to be compiled natively.
 You will need the following packages:
@@ -55,28 +56,28 @@ You will need the following packages:
 
 Run this before executing "bundle install" below
 
-````
+```
 bundle config build.nokogiri --use-system-libraries
 gem install pkg-config -v "~> 1.1.7"`
-````
+```
 
-##Linux
-````
+###Linux
+```
 aptcmd install ${programs}
-````
+```
 **Remember to install a command-line text editor if you don't like vi(m) or nano**
 ####Install the GPG key
-````
+```
 gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-````
+```
 ####Install RVM and ruby
 `\curl -sSL https://get.rvm.io | bash -s stable --ruby`
 
-#Configure nginx
+####Configure nginx
 `nano /etc/nginx/sites-available/sharex_server`
 
 *If you modify nginx.conf directly, remember to remove the existing server block, or adapt your configuration for your environment*
-````
+```
 server {
         listen 80;
         location / {
@@ -85,7 +86,7 @@ server {
         }
         server_name example.com;
 }
-````
+```
 Remember to change example.com to the domain your image viewer will use.
 
 Enable the new configuration
@@ -103,59 +104,59 @@ Linux:
 
 Windows:
 Windows is a little silly. It does not create the proper folders.
-````
+```
 #You may need to run cygwin terminal as admin
 mkdir /var/log/nginx
 mkdir /var/lib/nginx/tmp -p
 /usr/sbin/nginx.exe
-````
+```
 
-#Configure access
+##Configure access
 
 ---
 
 *Linux-only, cygwin has no equivalent*
 
-````
+```
 #add ruby user(s) to the 'rvm' group
 adduser ${tuser} rvm`
 #clean up after ourselves
 unset tuser && unalias apt
 #login as user
 su login ${tuser}
-````
+```
 
 ---
 
-####clone the repo
+###clone the repo
 
 Once you are logged in as user:
-````
+```
 cd ${HOME}
 git clone --depth=1 https://github.com/0xC7/That-one-file-viewer.git src/fileviewer/
-````
-####Install the requirements for the file viewer
-````
+```
+##Install the requirements for the file viewer
+```
 cd src/fileviewer
 bundle install
-````
-####configure the file viewer
-````
+```
+##configure the file viewer
+```
 cp config/examples/example_basic_cfg.yml config/basic_cfg.yml
 nano config/basic_cfg.yml
-````
+```
 
-#Running
-````
+##Running
+```
 dos2unix sharex_control.sh
 ./sharex_control.sh start
-````
+```
 
-#FTP server
+##FTP server
 You will need to set up your own FTP server on the machine and configure your secure access to it.
 
-# Autorun
+## Autorun
 To automatically run the script after a system reboot, edit the user's crontab file (`crontab -e`) and add something like this:
-````
+```
 @reboot ~/src/fileviewer/sharex_control.sh start
-````
+```
